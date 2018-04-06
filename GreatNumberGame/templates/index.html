@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Welcome to a Great Number Game!</h1>
+		<h2>I am thinking of a number between 1 and 100</h2>
+			<p>Take a guess</p>
+	<div>
+		{{message}}
+	</div>
+	<form action = "/process" method="POST">
+		<input type="text" name="guess"  placeholder="write your number">
+		<input type="submit" name="submit" value="submit">
+	</form>
+
+<br>
+<br>
+{% if session["result"] == "low" %}
+	<div id="low">Too Low!!!</div>
+{% elif session["result"] == "high" %}
+	<div id="high">Too high!!!</div>
+{% elif session["result"] == "Correct" %}
+	<div class="result">
+		<h1>You got it right!!!</h1>
+		<a href="/replay"><button>Play Again</button></a>
+	</div>
+{% endif %}
+
+</body>
+</html>
+
+ 

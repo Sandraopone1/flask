@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/the.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        {{message}}
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+	<form action='/index' method='post'>
+          <p>your Name: <input type='text' name='name'>
+          <p>Dojo Location: <select name="places">
+						    <option value="California">California</option>
+						    <option value="Boston">Boston</option>
+						    <option value="Washington">Washington</option>
+						    <option value="Virginia">Virginia</option>
+  						  </select></p>
+          <p>Favorite Language: <select name="language">
+						    <option value="Python">Python</option>
+						    <option value="Java">Java</option>
+						    <option value="Mean">Mean</option>
+						    <option value="C++">C++</option>
+  						  </select></p>
+          <p>comment(optional): <textarea name='textarea'> </textarea> </p>
+         <p><input type='submit' name='button' value='submit'></p>
+      </form>
+      
+
+</body>
+</html>
+
